@@ -11,6 +11,7 @@
             "username": "",
             "password": ""
         },
-        "port": 9091
+        "port": 9091,
+        "broker_url": ""
     }
 }
