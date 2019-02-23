@@ -263,7 +263,7 @@ bot.on('document', function (msg) {
     var chatId = msg.chat.id;
     var fileId = msg.document.file_id;
     bot.getFileLink(fileId).then((link) => {
-        engine.addTorrent(link, (details) => {
+        engine.addTorrent(config.transmission.broker_url+link, (details) => {
             bot.sendMessage(chatId, 'The torrent was added succesfully, here are some information about it\n' + details, engine.listOfCommandsKeyboard);
         }, (err) => {
             bot.sendMessage(chatId, err, engine.listOfCommandsKeyboard);
